@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User profile editing</title>
+  </head>
+  <body>
+    <div class="container">
+      <!--SVG picture section-->
+      <header>
+        <div class="profile">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 100 100"
+            role="img"
+            aria-label="User profile picture"
+          >
+            <circle cx="50" cy="50" r="50" fill="#bfdbfe" />
+            <circle cx="50" cy="35" r="18" fill="#2563eb" />
+            <path d="M 19 85 C 20 45, 80 45, 80 85 Z" fill="#2563eb" />
+          </svg>
+        </div>
+
+        <h1>Миний профайл</h1>
+        <p>Хувийн мэдээллээ шинэчлэх</p>
+      </header>
+
+      <form action="#" method="post">
+        <!--Hidden Input Section-->
+        <input type="hidden" name="userName" value="2026001" />
+
+        <fieldset>
+          <legend>1. Хувийн мэдээлэл</legend>
+
+          <div class="form-group">
+            <label for="fullname">Нэр: </label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              value="Зулцэцэг"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Имэйл хаяг: </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="zultsetseg0212@gmail.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Нууц үг: </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value="password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="number">Утасны дугаар: </label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              value="+976 80179520"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="fage">Нас: </label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              value="21"
+              min="1"
+              max="120"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="birthday">Төрсөн огноо: </label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              value="Зулцэцэг"
+              required
+            />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
