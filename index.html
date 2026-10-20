@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="mn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User profile editing</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <!--SVG picture section-->
+      <!-- SVG зураг -->
       <header>
         <div class="profile">
           <svg
@@ -22,20 +23,19 @@
             <path d="M 19 85 C 20 45, 80 45, 80 85 Z" fill="#2563eb" />
           </svg>
         </div>
-
         <h1>Миний профайл</h1>
         <p>Хувийн мэдээллээ шинэчлэх</p>
       </header>
 
-      <form action="#" method="post">
-        <!--Hidden Input Section-->
-        <input type="hidden" name="userName" value="2026001" />
+      <form action="#" method="post" enctype="multipart/form-data">
+        <!-- hidden -->
+        <input type="hidden" name="userId" value="2026001" />
 
         <fieldset>
           <legend>1. Хувийн мэдээлэл</legend>
 
           <div class="form-group">
-            <label for="fullname">Нэр: </label>
+            <label for="fullname">Нэр:</label>
             <input
               type="text"
               id="fullname"
@@ -46,7 +46,7 @@
           </div>
 
           <div class="form-group">
-            <label for="email">Имэйл хаяг: </label>
+            <label for="email">Имэйл хаяг:</label>
             <input
               type="email"
               id="email"
@@ -57,29 +57,29 @@
           </div>
 
           <div class="form-group">
-            <label for="password">Нууц үг: </label>
+            <label for="password">Нууц үг:</label>
             <input
               type="password"
               id="password"
               name="password"
-              value="password"
+              value="password123"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="number">Утасны дугаар: </label>
+            <label for="phone">Утасны дугаар:</label>
             <input
               type="tel"
-              id="number"
-              name="number"
+              id="phone"
+              name="phone"
               value="+976 80179520"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="fage">Нас: </label>
+            <label for="age">Нас:</label>
             <input
               type="number"
               id="age"
@@ -92,16 +92,155 @@
           </div>
 
           <div class="form-group">
-            <label for="birthday">Төрсөн огноо: </label>
+            <label for="birthday">Төрсөн огноо:</label>
             <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              value="Зулцэцэг"
-              required
+              type="date"
+              id="birthday"
+              name="birthday"
+              value="2005-12-02"
             />
           </div>
+
+          <div class="form-group">
+            <span class="group-title">Хүйс:</span>
+            <div class="inline">
+              <label
+                ><input type="radio" name="gender" value="female" checked />
+                Эмэгтэй</label
+              >
+              <label
+                ><input type="radio" name="gender" value="male" />
+                Эрэгтэй</label
+              >
+              <label
+                ><input type="radio" name="gender" value="other" /> Бусад</label
+              >
+            </div>
+          </div>
         </fieldset>
+
+        <fieldset>
+          <legend>2. Авьяас чадвар</legend>
+
+          <div class="form-group">
+            <label for="website">Вэбсайт:</label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              value="https://github.com/zulaa612"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="avatar">Профайл зураг:</label>
+            <input type="file" id="avatar" name="avatar" accept="image/*" />
+          </div>
+
+          <div class="form-group">
+            <label for="color">Дуртай өнгө:</label>
+            <input type="color" id="color" name="color" value="#2563eb" />
+          </div>
+
+          <div class="form-group">
+            <label for="level">Багаар ажиллах (0-5):</label>
+            <input
+              type="range"
+              id="level"
+              name="level"
+              min="0"
+              max="5"
+              value="4"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="city">Хот:</label>
+            <select id="city" name="city">
+              <option value="ub" selected>Улаанбаатар</option>
+              <option value="darkhan">Дархан</option>
+              <option value="erdenet">Эрдэнэт</option>
+              <option value="other">Бусад</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Миний тухай:</label>
+            <textarea id="bio" name="bio" rows="4">....</textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Хуваарь</legend>
+
+          <div class="form-group">
+            <label for="meeting">Уулзалтын цаг:</label>
+            <input
+              type="datetime-local"
+              id="meeting"
+              name="meeting"
+              value="2026-11-05T14:30"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="month">Төгсөх сар:</label>
+            <input type="month" id="month" name="month" value="2027-06" />
+          </div>
+
+          <div class="form-group">
+            <label for="week">Долоо хоног:</label>
+            <input type="week" id="week" name="week" value="2026-W45" />
+          </div>
+
+          <div class="form-group">
+            <label for="time">Сэрэх цаг:</label>
+            <input type="time" id="time" name="time" value="07:30" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Сонирхол</legend>
+          <div class="inline">
+            <label
+              ><input type="checkbox" name="hobby" value="coding" checked />
+              Програмчлал</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="music" />
+              Хөгжим</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="travel" checked />
+              Аялал</label
+            >
+            <label
+              ><input type="checkbox" name="hobby" value="sport" /> Спорт</label
+            >
+          </div>
+          <div class="form-group">
+            <label
+              ><input type="checkbox" name="agree" required /> Мэдээллээ үнэн
+              зөв гэдгийг баталж байна</label
+            >
+          </div>
+        </fieldset>
+
+        <!-- Footer Buttons -->
+        <div class="actions">
+          <button type="submit">Хадгалах</button>
+          <button type="reset">Цэвэрлэх</button>
+          <button type="button" onclick="alert('Профайл засварыг цуцаллаа')">
+            Цуцлах
+          </button>
+          <input type="submit" value="Илгээх" />
+          <input type="reset" value="Анхны утга" />
+          <input
+            type="button"
+            value="Тусламж"
+            onclick="alert('Мэдээллээ засаад Хадгалах товчийг дарна уу')"
+          />
+        </div>
       </form>
     </div>
   </body>
